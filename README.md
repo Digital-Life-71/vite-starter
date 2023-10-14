@@ -23,7 +23,7 @@
 
 ## Команды для сборки проекта
 
-Запустить dev сервер (на основе папки `app`)
+Запустить dev сервер (на основе папки `app`) http://localhost:8080/ 
 ```
 npm run dev
 ```
@@ -38,7 +38,7 @@ npm run build
 npm run watch
 ```
 
-Запустить preview сервер (на основе папки `dist`)
+Запустить preview сервер (на основе папки `dist`) http://localhost:8081/ 
 ```
 npm run preview
 ```
