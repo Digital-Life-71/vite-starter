@@ -42,3 +42,16 @@ npm run watch
 ```
 npm run preview
 ```
+
+## Решение проблемы с выполнением сценариев PowerShell
+
+Если вы получаете ошибку `UnauthorizedAccess` при запуске команды `npm`, выполните следующие шаги:
+
+1. Откройте PowerShell от имени администратора.
+2. Выполните команду:
+   ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+   ```
+3. Подтвердите изменение политики выполнения, введя `Y` и нажав Enter.
+
+После этого вы сможете запускать команды `npm` без ошибок.

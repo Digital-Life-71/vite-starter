@@ -41,7 +41,7 @@ const formatMoney = (val) => { // получает int(1234567), возвращ�
 }
 
 
-export default defineConfig((command) => {
+export default defineConfig(({ command, mode }) => {
     const global = {
         root: "app", // назначаем корневую директорию проекта
 
@@ -71,7 +71,7 @@ export default defineConfig((command) => {
         cssCodeSplit: false, // отключаем разделение стилей по разным файлам
 
         outDir: "../dist", // задаём папку для сборки
-        emptyOutDir: "../dist", // задаём папку, которую перед сборкой нужно очищать
+        emptyOutDir: true, // очищаем папку перед сборкой
 
         rollupOptions: {
             input: pages // передаём все страницы проекта для сборщика
@@ -90,11 +90,11 @@ export default defineConfig((command) => {
         }),
 
         // автоматическое обновление страницы при изменении любых файлов
-        FullReload(['config/routes.rb', 'app/**/*'], {always: true}),
+        FullReload(['config/routes.rb', 'app/**/*'], { always: true }),
 
         // Минификация html при prod-сборке
         htmlMinifier({
-            minify: command.mode == "prod",
+            minify: mode === "prod",
         }),
     ]
     
